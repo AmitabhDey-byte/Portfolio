@@ -1,10 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Index from './Pages/Index'
 import './App.css'
 
 export default function App() {
   
-  return(<></>)
-
+  return(<>
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Index />}/>
+    </Routes>
+  </BrowserRouter>
+  </>) 
 }
