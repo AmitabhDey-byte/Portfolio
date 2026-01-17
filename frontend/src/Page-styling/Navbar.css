@@ -1,51 +1,171 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: white;
-    margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  color: white;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 20, 40, 0.6));
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .logo a {
-    color: white;
-    transition: color 0.3s ease;
+  color: white;
+  background: linear-gradient(135deg, #ff00ee, #c002f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
 }
 
 .logo a:hover {
-    color: #00d4ff;
+  letter-spacing: 2px;
 }
 
 .nav-links {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
-    color: white;
-    transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-    color: #00d4ff;
+  color: #ff00ee;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #ff00ee, #c002f9);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-contact {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #ff00ee, #c002f9);
+  color: #000;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+  letter-spacing: 1.5px;
+}
+
+.btn-contact:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    order: 3;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .nav-cta {
+    gap: 0.5rem;
+  }
+
+  .btn-contact {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .nav-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
