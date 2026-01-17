@@ -1,0 +1,20 @@
+
+ p
+{
+
+    animation: blink 0.7s steps(1) infinite;
+    color: white;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+
+}
+a
+{
+    animation: blink 0.7s steps(1) infinite;
+    color: white;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+
+}

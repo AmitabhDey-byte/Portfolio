@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents right blank space */
+}
+
+/* Background wrapper */
+.unicorn-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Unicorn canvas */
+.unicorn-canvas {
+  width: 100%;
+  height: 100%;
+
+  /* behave like background */
+  object-fit: cover;
+}
+
+/* Your site content */
+.site-content {
+  position: relative;
+  z-index: 1; /* above background */
+}

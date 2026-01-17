@@ -4,16 +4,25 @@ import About from "./Pages/About"
 import Contact from "./Pages/Contact"
 import Footer from "./Pages/Footer"
 import Landing from "./Pages/Landing"
-import Navbar from "./Pages/Navbar"
 import Projects from "./Pages/Projects"
 import Skills from "./Pages/Skills"
-
+import Background from './component/Background'
+import Navbar from './Pages/Navbar'
+import TargetCursor from './component/TargetCursor';
 import './App.css'
 
 export default function App() {
   
   return(<>
+      <div>
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor={true}
+        parallaxOn={true}
+      />
+    </div>
   <BrowserRouter>
+  <Background />
 <Navbar />
     <Routes>
       <Route path='/' element={<Landing />}/>
