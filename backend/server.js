@@ -8,21 +8,22 @@ const PORT = process.env.PORT || 4000;
 
 (async () => {
   try {
-    await mongoose.connect(`${process.env.MONGO_URI}/${process.env.DB_NAME}` );
-
-    console.log("Connected to MongoDB");
-
-    app.on("error", (err) => {
-      console.error("Error in connecting to database:", err);
-      throw err;
-    });
-
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-
+    if (process.env.MONGO_URI) {
+      await mongoose.connect(`${process.env.MONGO_URI}/${process.env.DB_NAME || 'portfolio'}`);
+      console.log("Connected to MongoDB");
+    } else {
+      console.warn("MONGO_URI not configured, running without database");
+    }
   } catch (err) {
-    console.error("Some error occurred:", err);
-    process.exit(1);
+    console.error("MongoDB connection error:", err.message);
+    console.warn("Starting server without database connection");
   }
+
+  app.on("error", (err) => {
+    console.error("Server error:", err);
+  });
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 })();
