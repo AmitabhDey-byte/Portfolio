@@ -7,7 +7,7 @@ import Contact from "./Pages/Contact";
 import Landing from "./Pages/Landing";
 import Projects from "./Pages/Projects";
 import Skills from "./Pages/Skills";
-import FloatingLines from "../component/FloatingLines"
+import FloatingLines from "./component/FloatingLines"
 import Navbar from "./Pages/Navbar";
 
 import "./App.css";
