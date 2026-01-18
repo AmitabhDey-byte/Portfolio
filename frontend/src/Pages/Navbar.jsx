@@ -59,21 +59,21 @@ export default function Navbar() {
         </motion.div>
 
         <motion.div className="nav-links">
-          {["Projects", "About", "Skills", "Contact"].map((link) => (
+          {["projects", "about", "skills", "contact"].map((link) => (
             <motion.Link
               key={link}
               to={`/${link}`}
               variants={linkVariants}
               whileHover="hover"
             >
-              {link}
+              {link.charAt(0).toUpperCase() + link.slice(1)}
             </motion.Link>
           ))}
         </motion.div>
 
         <div className="nav-cta">
           <motion.Link
-            to="/Contact"
+            to="/contact"
             className="btn-contact"
             variants={buttonVariants}
             whileHover="hover"
