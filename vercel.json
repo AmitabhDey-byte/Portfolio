@@ -1,13 +1,4 @@
 {
   "buildCommand": "npm --prefix=frontend run build",
-  "outputDirectory": "frontend/dist",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "github": {
-    "silent": true
-  }
+  "outputDirectory": "frontend/dist"
 }
