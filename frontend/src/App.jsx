@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Footer from "./Pages/Footer";
+
 import Landing from "./Pages/Landing";
 import Projects from "./Pages/Projects";
 import Skills from "./Pages/Skills";
@@ -31,7 +31,6 @@ export default function App() {
           </AnimatePresence>
          
         </main>
-          <Footer />
       </div>
      
     </BrowserRouter>
