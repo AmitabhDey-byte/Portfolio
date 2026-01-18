@@ -15,7 +15,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 20, 40, 0.6));
+  background: linear-gradient(135deg, rgba(213, 3, 245, 0.8), rgba(245, 29, 216, 0.6));
   position: sticky;
   top: 0;
   z-index: 100;

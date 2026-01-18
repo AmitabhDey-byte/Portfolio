@@ -37,7 +37,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Links/Buttons */
 .links {
   display: flex;
   gap: 1.5rem;
@@ -84,9 +83,9 @@
 }
 
 .btn-2:hover {
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(106, 5, 247, 0.1);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(201, 18, 241, 0.3);
   letter-spacing: 2px;
 }
 
