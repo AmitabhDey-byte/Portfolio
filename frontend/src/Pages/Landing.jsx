@@ -1,8 +1,15 @@
-import {Link} from "react-router-dom";  
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import TextType from "../component/TextType";
 import "../Page-styling/Landing.css";
-import { pageVariants, staggerContainerVariants, staggerItemVariants, buttonHoverVariants } from "../utils/animations";
+import {
+  pageVariants,
+  staggerContainerVariants,
+  staggerItemVariants,
+  buttonHoverVariants,
+} from "../utils/animations";
+
+const MotionLink = motion(Link);
 
 export default function Landing() {
   return (
@@ -13,7 +20,7 @@ export default function Landing() {
       exit="exit"
       variants={pageVariants}
     >
-      <motion.div 
+      <motion.div
         className="page-content"
         variants={staggerContainerVariants}
         initial="initial"
@@ -30,31 +37,31 @@ export default function Landing() {
         </motion.div>
 
         <motion.p variants={staggerItemVariants}>
-          A creative developer crafting beautiful, functional digital<br/>
+          A creative developer crafting beautiful, functional digital
+          <br />
           experiences that blend design and technology seamlessly.
         </motion.p>
 
-        <motion.div 
-          className="links"
-          variants={staggerItemVariants}
-        >
-          <motion.Link to="/Projects" 
+        <motion.div className="links" variants={staggerItemVariants}>
+          <MotionLink
+            to="/projects"
             className="btn"
             variants={buttonHoverVariants}
             whileHover="hover"
             whileTap="tap"
           >
             View My Projects
-          </motion.Link>
-          <motion.Link 
-            to="/About" 
+          </MotionLink>
+
+          <MotionLink
+            to="/about"
             className="btn-2"
             variants={buttonHoverVariants}
             whileHover="hover"
             whileTap="tap"
           >
             Learn More
-          </motion.Link>
+          </MotionLink>
         </motion.div>
       </motion.div>
     </motion.div>

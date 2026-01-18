@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../Page-styling/Navbar.css";
 
+const MotionLink = motion(Link);
+
 export default function Navbar() {
   const navVariants = {
     initial: { opacity: 0, y: -20 },
     animate: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -19,9 +18,7 @@ export default function Navbar() {
     hover: {
       scale: 1.1,
       color: "#ff00ee",
-      transition: {
-        duration: 0.2,
-      },
+      transition: { duration: 0.2 },
     },
   };
 
@@ -29,50 +26,39 @@ export default function Navbar() {
     hover: {
       scale: 1.05,
       boxShadow: "0 10px 25px rgba(0, 212, 255, 0.3)",
-      transition: {
-        duration: 0.2,
-      },
+      transition: { duration: 0.2 },
     },
-    tap: {
-      scale: 0.95,
-    },
+    tap: { scale: 0.95 },
   };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={navVariants}
-    >
+    <motion.div initial="initial" animate="animate" variants={navVariants}>
       <nav className="navbar">
-        <motion.div 
+        <motion.div
           className="logo"
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <motion.Link 
-            to="/"
-            whileHover={{ color: "#ff00ee" }}
-          >
+          <MotionLink to="/" whileHover={{ color: "#ff00ee" }}>
             MyPortfolio
-          </motion.Link>
+          </MotionLink>
         </motion.div>
 
         <motion.div className="nav-links">
           {["projects", "about", "skills", "contact"].map((link) => (
-            <motion.Link
+            <MotionLink
               key={link}
               to={`/${link}`}
               variants={linkVariants}
               whileHover="hover"
             >
               {link.charAt(0).toUpperCase() + link.slice(1)}
-            </motion.Link>
+            </MotionLink>
           ))}
         </motion.div>
 
         <div className="nav-cta">
-          <motion.Link
+          <MotionLink
             to="/contact"
             className="btn-contact"
             variants={buttonVariants}
@@ -80,7 +66,7 @@ export default function Navbar() {
             whileTap="tap"
           >
             Get in Touch
-          </motion.Link>
+          </MotionLink>
         </div>
       </nav>
     </motion.div>
