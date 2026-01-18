@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../Page-styling/Navbar.css";
 
@@ -49,37 +50,37 @@ export default function Navbar() {
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <motion.a 
-            href="/"
+          <motion.Link 
+            to="/"
             whileHover={{ color: "#ff00ee" }}
           >
             MyPortfolio
-          </motion.a>
+          </motion.Link>
         </motion.div>
 
         <motion.div className="nav-links">
           {["Projects", "About", "Skills", "Contact"].map((link) => (
-            <motion.a
+            <motion.Link
               key={link}
-              href={`/${link}`}
+              to={`/${link}`}
               variants={linkVariants}
               whileHover="hover"
             >
               {link}
-            </motion.a>
+            </motion.Link>
           ))}
         </motion.div>
 
         <div className="nav-cta">
-          <motion.a
-            href="/Contact"
+          <motion.Link
+            to="/Contact"
             className="btn-contact"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
           >
             Get in Touch
-          </motion.a>
+          </motion.Link>
         </div>
       </nav>
     </motion.div>

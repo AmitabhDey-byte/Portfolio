@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";  
 import { motion } from "framer-motion";
 import TextType from "../component/TextType";
 import "../Page-styling/Landing.css";
@@ -37,24 +38,23 @@ export default function Landing() {
           className="links"
           variants={staggerItemVariants}
         >
-          <motion.a 
-            href="/Projects" 
+          <motion.Link to="/Projects" 
             className="btn"
             variants={buttonHoverVariants}
             whileHover="hover"
             whileTap="tap"
           >
             View My Projects
-          </motion.a>
-          <motion.a 
-            href="/About" 
+          </motion.Link>
+          <motion.Link 
+            to="/About" 
             className="btn-2"
             variants={buttonHoverVariants}
             whileHover="hover"
             whileTap="tap"
           >
             Learn More
-          </motion.a>
+          </motion.Link>
         </motion.div>
       </motion.div>
     </motion.div>
